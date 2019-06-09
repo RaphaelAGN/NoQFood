@@ -10,11 +10,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 import Adapters.CardapioAdapter;
 import Adapters.EstabilishmentItemAdapter;
 import Utils.StartSnapHelper;
+
+import com.example.android.noqfoodprototype.CardapioList;
 import com.example.android.noqfoodprototype.R;
 import com.example.android.noqfoodprototype.constructors.CardapioItens;
 import com.example.android.noqfoodprototype.constructors.EstablishmentsItens;
@@ -53,16 +57,9 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         startSnapHelper.attachToRecyclerView( recyclerView );
 
 
-        //Set Cardapio
-        ArrayList<CardapioItens> cardapio = new ArrayList<>();
-        cardapio.add(new CardapioItens(R.drawable.cheeseburgerbk, "Cheeseburger", "R$18,90"));
-        cardapio.add(new CardapioItens(R.drawable.cheddarduplobk, "Cheddar Duplo", "R$22,90"));
-        cardapio.add(new CardapioItens(R.drawable.stackertriplobk, "Stacker Triplo", "R$27,90"));
-        cardapio.add(new CardapioItens(R.drawable.picanhabbbk, "Picanha Barbecue Bacon", "R$29,90"));
-        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita P", "R$5,00"));
-        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita M", "R$6,50"));
-        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita G", "R$7,50"));
-        cardapio.add(new CardapioItens(R.drawable.bkmix, "BK Mix", "R$8,50"));
+
+        ArrayList<CardapioItens> cardapio = CardapioList.getItens("Burger King");
+
 
         RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
         LinearLayoutManager verticalLayout
@@ -76,26 +73,15 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
     @Override
 
     public void onItemClick(View view, int position) {
-        /*
-        switch(position){
-            case 0:  Intent bk = new Intent(MainActivity.this, BKCardapio.class);
-                startActivity(bk);
-                break;
-            case 1:  Intent mc = new Intent(MainActivity.this, MCDonaldsCardapio.class);
-                startActivity(mc);
-                break;
-            case 2:  Intent bobs = new Intent(MainActivity.this, BobsCardapio.class);
-                startActivity(bobs);
-                break;
-            case 3:  Intent subway = new Intent(MainActivity.this, SubwayCardapio.class);
-                startActivity(subway);
-                break;
-            case 4:  Intent tacobell = new Intent(MainActivity.this, TacobellCardapio.class);
-                startActivity(tacobell);
-                break;
-        }
-        */
-        //Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on item position " + position, Toast.LENGTH_SHORT).show();
+
+        //Cria um novo array com os itens da posição clicada
+        ArrayList<CardapioItens> cardapio = CardapioList.getItens( adapter.getItem( position ) );
+
+        //Adiciona novamente a recyclerView a lista atualizada
+        RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
+        adapterCardapio = new CardapioAdapter(this, cardapio);
+        cardapioRecycler.setAdapter(adapterCardapio);
+
     }
 
     @Override
