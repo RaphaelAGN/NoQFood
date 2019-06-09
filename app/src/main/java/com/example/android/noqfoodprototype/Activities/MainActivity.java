@@ -5,15 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-
 import java.util.ArrayList;
-
 import Adapters.EstabilishmentItemAdapter;
-
+import Utils.StartSnapHelper;
 import com.example.android.noqfoodprototype.BKCardapio;
 import com.example.android.noqfoodprototype.BobsCardapio;
 import com.example.android.noqfoodprototype.MCDonaldsCardapio;
@@ -48,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         adapter = new EstabilishmentItemAdapter(this, estabelecimentos);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
+
+        SnapHelper startSnapHelper = new StartSnapHelper();
+        startSnapHelper.attachToRecyclerView( recyclerView );
     }
 
     @Override
