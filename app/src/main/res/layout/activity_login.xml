@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.noqfoodprototype.Activities.LoginActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="@dimen/margin_startEnd"
+        android:layout_marginEnd="@dimen/margin_startEnd"
+        android:text="@string/login_text"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/edt_login_emailID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:layout_marginEnd="@dimen/margin_startEnd"
+        android:layout_marginStart="@dimen/margin_startEnd"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_email"
+        android:drawablePadding="8dp"
+        android:drawableLeft="@drawable/ic_email" />
+
+    <EditText
+        android:id="@+id/edt_login_passwordID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:layout_marginEnd="@dimen/margin_startEnd"
+        android:layout_marginStart="@dimen/margin_startEnd"
+        android:layout_marginTop="10sp"
+        android:inputType="textPassword"
+        android:hint="@string/hint_password"
+        android:drawablePadding="8dp"
+        android:drawableLeft="@drawable/ic_cadeado" />
+
+    <Button
+        android:id="@+id/btn_loginID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_marginEnd="@dimen/margin_startEnd"
+        android:layout_marginStart="@dimen/margin_startEnd"
+        android:layout_marginTop="10sp"
+        android:text="@string/text_btn_entrar"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/txt_SignupID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.5"
+        android:text="@string/txt_criar_conta"
+        android:layout_marginTop="10sp"
+        android:textSize="@dimen/textSize"
+        android:textColor="@color/colorAccent"/>
+
+    <ProgressBar
+        android:id="@+id/login_progressbar"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

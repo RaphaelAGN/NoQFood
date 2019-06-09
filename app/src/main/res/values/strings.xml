@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">NoQ Food Prototype</string>
+    <!-- Strings relacionadas aos nomes dos estabelecimentos -->
+    <string name="nomeEstabelecimentos">Estabelecimentos</string>
+    <string name="bk">Burger King</string>
+    <string name="mc">McDonalds</string>
+    <string name="bobs">Bobs</string>
+    <string name="subway">Subway</string>
+    <string name="tacobell">Tacobell</string>
+
+    <!--Strings relacionadas ao cadastro-->
+    <string name="txt_num_cartao">Digite o número do seu cartão</string>
+    <string name="txt_name">Digite o seu nome</string>
+    <string name="txt_btn_salvar">Salvar</string>
+
+    <!-- Strings related to login -->
+    <string name="login_text">Bem Vindo</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="text_btn_entrar">Entrar</string>
+    <string name="txt_title_criation">Crie sua conta</string>
+    <string name="txt_create_nome">Nome</string>
+    <string name="txt_create_senha">Senha</string>
+    <string name="txt_create_confirmar">Confirmar Senha</string>
+    <string name="txt_btn_create">Registrar</string>
+    <string name="id_login">Já sou cadastrado</string>
+    <string name="txt_criar_conta">Criar Conta</string>"
+
+
+    <string name="Cardapio">Cardápio</string>
+    <string name="BKCardapio">Cardápio Burger King</string>
+    <string name="MCCardapio">Cardápio MC Donalds</string>
+    <string name="BobsCardapio">Cardápio Bobs</string>
+    <string name="SubCardapio">Cardápio Subway</string>
+    <string name="TacoCardapio">Cardápio Tacobell</string>
+    <string name="todo">TODO</string>
+</resources>

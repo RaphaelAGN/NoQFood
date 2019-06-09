@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "374654618248",
+    "firebase_url": "https://noq-food.firebaseio.com",
+    "project_id": "noq-food",
+    "storage_bucket": "noq-food.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374654618248:android:bc16a6dc0debbb72",
+        "android_client_info": {
+          "package_name": "com.example.android.noqfoodprototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374654618248-7mjaf9o3s864v20e52e1dq8geoau5jgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.noqfoodprototype",
+            "certificate_hash": "378f3dfcbe207a687513592535b00693024b15d0"
+          }
+        },
+        {
+          "client_id": "374654618248-n4erd97rso26io4mn0c9t1f8mhv096qn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJzO5nKSUlmpTwYp9HgD_odBDzh2_cGs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374654618248-n4erd97rso26io4mn0c9t1f8mhv096qn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
