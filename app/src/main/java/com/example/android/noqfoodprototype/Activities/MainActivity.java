@@ -1,6 +1,7 @@
 package com.example.android.noqfoodprototype.Activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
     private EstabilishmentItemAdapter adapter;
     private CardapioAdapter adapterCardapio;
 
+    private LinearLayoutManager horizontalLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +48,11 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
 
         //Set RecyclerView da lista de estabelecimentos
         RecyclerView recyclerView = findViewById(R.id.estabilishmentsList);
-        LinearLayoutManager horizontalLayoutManager
-                = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(horizontalLayoutManager);
+        horizontalLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager( horizontalLayoutManager );
         adapter = new EstabilishmentItemAdapter(this, estabelecimentos);
         adapter.setClickListener(this);
+        recyclerView.addOnScrollListener(onScrollListener);
         recyclerView.setAdapter(adapter);
 
         //Set SnapHelper para centralizar os items da lista de estabelecimentos
@@ -59,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
 
 
         ArrayList<CardapioItens> cardapio = CardapioList.getItens("Burger King");
-
 
         RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
         LinearLayoutManager verticalLayout
@@ -71,9 +73,11 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
     }
 
     @Override
-
     public void onItemClick(View view, int position) {
+        setCardapio( position );
+    }
 
+    private void setCardapio(int position){
         //Cria um novo array com os itens da posição clicada
         ArrayList<CardapioItens> cardapio = CardapioList.getItens( adapter.getItem( position ) );
 
@@ -81,8 +85,24 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
         adapterCardapio = new CardapioAdapter(this, cardapio);
         cardapioRecycler.setAdapter(adapterCardapio);
-
     }
+
+    private RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+        }
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+
+            //Se só houver um elemento sendo exibido na tela
+            if ( (horizontalLayoutManager.getChildCount()) == 1 ){
+                //Seta o cardapio para exibir os items dele
+                setCardapio( horizontalLayoutManager.findFirstVisibleItemPosition() );
+            }
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
