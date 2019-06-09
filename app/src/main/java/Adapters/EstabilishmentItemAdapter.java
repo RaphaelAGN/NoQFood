@@ -41,9 +41,9 @@ public class EstabilishmentItemAdapter extends RecyclerView.Adapter<Estabilishme
         String nome = estabelecimentos.get(position).getNomeEstabelecimento();
 
         //Define Logo
-        holder.myView.setImageResource( logo );
+        holder.image.setImageResource( logo );
         //Define nome
-        holder.myTextView.setText(nome);
+        holder.nome.setText(nome);
     }
 
     // total number of rows
@@ -54,13 +54,13 @@ public class EstabilishmentItemAdapter extends RecyclerView.Adapter<Estabilishme
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView myView;
-        TextView myTextView;
+        ImageView image;
+        TextView nome;
 
         ViewHolder(View itemView) {
             super(itemView);
-            myView = itemView.findViewById(R.id.logoEstabilishment);
-            myTextView = itemView.findViewById(R.id.nomeEstabilishments);
+            image = itemView.findViewById(R.id.logoEstabilishment);
+            nome = itemView.findViewById(R.id.nomeEstabilishments);
             itemView.setOnClickListener(this);
         }
 

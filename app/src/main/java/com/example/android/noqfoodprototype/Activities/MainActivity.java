@@ -11,27 +11,27 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import java.util.ArrayList;
+
+import Adapters.CardapioAdapter;
 import Adapters.EstabilishmentItemAdapter;
 import Utils.StartSnapHelper;
-import com.example.android.noqfoodprototype.BKCardapio;
-import com.example.android.noqfoodprototype.BobsCardapio;
-import com.example.android.noqfoodprototype.MCDonaldsCardapio;
 import com.example.android.noqfoodprototype.R;
-import com.example.android.noqfoodprototype.SubwayCardapio;
-import com.example.android.noqfoodprototype.TacobellCardapio;
+import com.example.android.noqfoodprototype.constructors.CardapioItens;
 import com.example.android.noqfoodprototype.constructors.EstablishmentsItens;
 import com.google.firebase.auth.FirebaseAuth;
-public class MainActivity extends AppCompatActivity implements EstabilishmentItemAdapter.ItemClickListener {
+public class MainActivity extends AppCompatActivity implements EstabilishmentItemAdapter.ItemClickListener, CardapioAdapter.ItemClickListener {
 
     private EstabilishmentItemAdapter adapter;
+    private CardapioAdapter adapterCardapio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Tela que será usada
         setContentView(R.layout.activity_estabilhments_itens);
 
+        //Lista de estabelecimentos
         ArrayList<EstablishmentsItens> estabelecimentos = new ArrayList<>();
-
         estabelecimentos.add(new EstablishmentsItens(R.drawable.bk, "Burger King"));
         estabelecimentos.add(new EstablishmentsItens(R.drawable.mcdonalds, "MC Donald's"));
         estabelecimentos.add(new EstablishmentsItens(R.drawable.bobs, "Bob's"));
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         estabelecimentos.add(new EstablishmentsItens(R.drawable.tacobell, "Tacobell"));
 
 
-        // set up the RecyclerView
+        //Set RecyclerView da lista de estabelecimentos
         RecyclerView recyclerView = findViewById(R.id.estabilishmentsList);
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
@@ -48,12 +48,35 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
+        //Set SnapHelper para centralizar os items da lista de estabelecimentos
         SnapHelper startSnapHelper = new StartSnapHelper();
         startSnapHelper.attachToRecyclerView( recyclerView );
+
+
+        //Set Cardapio
+        ArrayList<CardapioItens> cardapio = new ArrayList<>();
+        cardapio.add(new CardapioItens(R.drawable.cheeseburgerbk, "Cheeseburger", "R$18,90"));
+        cardapio.add(new CardapioItens(R.drawable.cheddarduplobk, "Cheddar Duplo", "R$22,90"));
+        cardapio.add(new CardapioItens(R.drawable.stackertriplobk, "Stacker Triplo", "R$27,90"));
+        cardapio.add(new CardapioItens(R.drawable.picanhabbbk, "Picanha Barbecue Bacon", "R$29,90"));
+        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita P", "R$5,00"));
+        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita M", "R$6,50"));
+        cardapio.add(new CardapioItens(R.drawable.fritasp, "Batata Frita G", "R$7,50"));
+        cardapio.add(new CardapioItens(R.drawable.bkmix, "BK Mix", "R$8,50"));
+
+        RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
+        LinearLayoutManager verticalLayout
+                = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+        cardapioRecycler.setLayoutManager(verticalLayout);
+        adapterCardapio = new CardapioAdapter(this, cardapio);
+        adapterCardapio.setClickListener(this);
+        cardapioRecycler.setAdapter(adapterCardapio);
     }
 
     @Override
+
     public void onItemClick(View view, int position) {
+        /*
         switch(position){
             case 0:  Intent bk = new Intent(MainActivity.this, BKCardapio.class);
                 startActivity(bk);
@@ -71,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
                 startActivity(tacobell);
                 break;
         }
+        */
         //Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on item position " + position, Toast.LENGTH_SHORT).show();
     }
 

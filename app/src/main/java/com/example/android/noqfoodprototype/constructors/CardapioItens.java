@@ -2,16 +2,12 @@ package com.example.android.noqfoodprototype.constructors;
 
 public class CardapioItens{
 
-        //Nome dos produtos de cada cardapio (Ex: bigmac, whopper)
-        private String mNomeProduto;
-
-        // Text color of the text
-        //private int mTextColor;
-
-        // ID da imagem (Ex: drawable...)
-        private int mImageResourceID;
-
-        private String mValorProduto;
+        //Nome
+        private String cardapioItemNome;
+        //Image
+        private int cardapioItemImage;
+        //Preço
+        private String cardapioItemPreco;
 
         /** Constant value that represents no image was provided for this word */
         private static final int NO_IMAGE_PROVIDED = -1;
@@ -20,45 +16,38 @@ public class CardapioItens{
         /**
          * Constructs a new TextView with initial values for text and text color.
          */
-        public CardapioItens(int imageResourceID, String nomeProduto, String valorProduto) {
-            mImageResourceID = imageResourceID;
-            mNomeProduto = nomeProduto;
-            mValorProduto = valorProduto;
+        public CardapioItens(int cardapioItemImage, String cardapioItemNome, String cardapioItemPreco) {
+            this.cardapioItemImage = cardapioItemImage;
+            this.cardapioItemNome = cardapioItemNome;
+            this.cardapioItemPreco = cardapioItemPreco;
         }
 
-        /**
-         * Gets the imageID
-         *
-         * @return current image ID
-        **/
-        public int getImageResourceID(){
-            return mImageResourceID;
-        }
 
-        /**
-         * Gets the product name
-         *
-         * @return current product name
-         **/
-
-        public String getNomeProduto(){
-            return mNomeProduto;
-        }
-
-        /**
-         * Gets the product valor
-         *
-         * @return current product valor
-         **/
-        public String getValorProduto(){
-            return mValorProduto;
-        }
-
-        /**
-         * Returns whether or not there is an image for this word.
-         */
         public boolean hasImage() {
-            return mImageResourceID != NO_IMAGE_PROVIDED;
+            return getCardapioItemImage() != NO_IMAGE_PROVIDED;
         }
 
+        public String getCardapioItemNome() {
+            return cardapioItemNome;
+        }
+
+        public void setCardapioItemNome(String cardapioItemNome) {
+            this.cardapioItemNome = cardapioItemNome;
+        }
+
+        public int getCardapioItemImage() {
+            return cardapioItemImage;
+        }
+
+        public void setCardapioItemImage(int cardapioItemImage) {
+            this.cardapioItemImage = cardapioItemImage;
+        }
+
+        public String getCardapioItemPreco() {
+            return cardapioItemPreco;
+        }
+
+        public void setCardapioItemPreco(String cardapioItemPreco) {
+            this.cardapioItemPreco = cardapioItemPreco;
+        }
 }
