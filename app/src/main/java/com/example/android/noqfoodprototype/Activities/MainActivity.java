@@ -111,8 +111,6 @@ public class MainActivity extends AppCompatActivity implements CardapioAdapter.I
 
     }
 
-
-
     @Override
     protected void onResume(){
         super.onResume();

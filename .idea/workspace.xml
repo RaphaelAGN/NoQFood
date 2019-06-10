@@ -22,7 +22,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Utils/SnappingLinearLayoutManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +59,7 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="gradle" value="4" />
-          <entry key="java" value="75" />
+          <entry key="java" value="76" />
           <entry key="xml" value="74" />
         </counts>
       </usages-collector>
@@ -67,7 +67,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="75" />
+          <entry key="JAVA" value="76" />
           <entry key="XML" value="74" />
         </counts>
       </usages-collector>
@@ -75,7 +75,7 @@
         <counts>
           <entry key="dummy" value="14" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="5843" />
+          <entry key="java" value="5845" />
           <entry key="txt" value="75" />
           <entry key="xml" value="202" />
         </counts>
@@ -83,7 +83,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="5843" />
+          <entry key="JAVA" value="5845" />
           <entry key="PLAIN_TEXT" value="89" />
           <entry key="XML" value="202" />
         </counts>
@@ -95,24 +95,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+            <state relative-caret-position="-95">
+              <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Utils/SnappingLinearLayoutManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2504,6 +2490,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/GetList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Utils/SnappingLinearLayoutManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Utils/SmoothScrollLinearLayoutManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Utils/Debounce.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Utils/Debouncer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java" />
       </list>
     </option>
@@ -2757,8 +2745,21 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java</url>
+          <line>84</line>
+          <properties method="onSensorChanged">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mymenu.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2993,10 +2994,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Utils/Debouncer.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/noqfoodprototype/Activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+        <state relative-caret-position="-95">
+          <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
