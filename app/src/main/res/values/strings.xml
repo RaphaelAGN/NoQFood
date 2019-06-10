@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoQ Food Prototype</string>
+    <string name="app_name">NoQ Food</string>
     <!-- Strings relacionadas aos nomes dos estabelecimentos -->
     <string name="nomeEstabelecimentos">Estabelecimentos</string>
     <string name="bk">Burger King</string>

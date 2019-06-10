@@ -30,7 +30,7 @@ public class EstabilishmentItemAdapter extends RecyclerView.Adapter<Estabilishme
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.estabilishment_item, parent, false);
+        View view = mInflater.inflate(R.layout.establishment_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -59,8 +59,8 @@ public class EstabilishmentItemAdapter extends RecyclerView.Adapter<Estabilishme
 
         ViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.logoEstabilishment);
-            nome = itemView.findViewById(R.id.nomeEstabilishments);
+            image = itemView.findViewById(R.id.logoEstablishment);
+            nome = itemView.findViewById(R.id.nomeEstablishments);
             itemView.setOnClickListener(this);
         }
 

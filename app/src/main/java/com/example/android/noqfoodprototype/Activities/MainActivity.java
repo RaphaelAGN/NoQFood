@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements CardapioAdapter.I
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Actibity que será usada
-        setContentView(R.layout.activity_estabilhments_itens);
+        setContentView(R.layout.activity_establishments_itens);
 
         mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(mTopToolbar);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements CardapioAdapter.I
         ArrayList estabelecimentos =  GetList.getEstabelecimentos();
         maxPos = estabelecimentos.size() -1;
 
-        final RecyclerView recyclerView = findViewById(R.id.estabilishmentsList);
+        final RecyclerView recyclerView = findViewById(R.id.establishmentsList);
         horizontalLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager( horizontalLayoutManager );
         adapter = new EstabilishmentItemAdapter(this, estabelecimentos);
