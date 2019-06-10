@@ -1,13 +1,29 @@
 package com.example.android.noqfoodprototype;
 
 import com.example.android.noqfoodprototype.constructors.CardapioItens;
+import com.example.android.noqfoodprototype.constructors.EstablishmentsItens;
 
 import java.util.ArrayList;
 
+/*
+    A classe futuramente puxará os dados do banco de dados vinculado ao servidor
+ */
 
-public class CardapioList {
+public class GetList {
     private static ArrayList<CardapioItens> cardapio;
+    private static ArrayList<EstablishmentsItens> estabelecimentos;
 
+    public static ArrayList getEstabelecimentos(){
+        estabelecimentos = new ArrayList<>();
+
+        estabelecimentos.add(new EstablishmentsItens(R.drawable.bk, "Burger King"));
+        estabelecimentos.add(new EstablishmentsItens(R.drawable.mcdonalds, "MC Donald's"));
+        estabelecimentos.add(new EstablishmentsItens(R.drawable.bobs, "Bob's"));
+        estabelecimentos.add(new EstablishmentsItens(R.drawable.subway, "Subway"));
+        estabelecimentos.add(new EstablishmentsItens(R.drawable.tacobell, "Tacobell"));
+
+        return estabelecimentos;
+    }
 
     public static ArrayList<CardapioItens> getItens(String loja){
         cardapio = new ArrayList<>();

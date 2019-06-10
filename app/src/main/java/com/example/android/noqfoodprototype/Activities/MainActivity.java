@@ -13,45 +13,35 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import Adapters.CardapioAdapter;
 import Adapters.EstabilishmentItemAdapter;
 import Utils.StartSnapHelper;
-
-import com.example.android.noqfoodprototype.CardapioList;
+import com.example.android.noqfoodprototype.GetList;
 import com.example.android.noqfoodprototype.R;
-import com.example.android.noqfoodprototype.constructors.CardapioItens;
-import com.example.android.noqfoodprototype.constructors.EstablishmentsItens;
 import com.google.firebase.auth.FirebaseAuth;
-public class MainActivity extends AppCompatActivity implements EstabilishmentItemAdapter.ItemClickListener, CardapioAdapter.ItemClickListener {
+
+public class MainActivity extends AppCompatActivity implements CardapioAdapter.ItemClickListener {
 
     private EstabilishmentItemAdapter adapter;
     private CardapioAdapter adapterCardapio;
 
     private LinearLayoutManager horizontalLayoutManager;
+    private LinearLayoutManager verticalLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Tela que será usada
+        //Actibity que será usada
         setContentView(R.layout.activity_estabilhments_itens);
 
+
         //Lista de estabelecimentos
-        ArrayList<EstablishmentsItens> estabelecimentos = new ArrayList<>();
-        estabelecimentos.add(new EstablishmentsItens(R.drawable.bk, "Burger King"));
-        estabelecimentos.add(new EstablishmentsItens(R.drawable.mcdonalds, "MC Donald's"));
-        estabelecimentos.add(new EstablishmentsItens(R.drawable.bobs, "Bob's"));
-        estabelecimentos.add(new EstablishmentsItens(R.drawable.subway, "Subway"));
-        estabelecimentos.add(new EstablishmentsItens(R.drawable.tacobell, "Tacobell"));
-
-
         //Set RecyclerView da lista de estabelecimentos
         RecyclerView recyclerView = findViewById(R.id.estabilishmentsList);
         horizontalLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager( horizontalLayoutManager );
-        adapter = new EstabilishmentItemAdapter(this, estabelecimentos);
-        adapter.setClickListener(this);
+        adapter = new EstabilishmentItemAdapter(this, GetList.getEstabelecimentos() );
+        //Seta o scrolllistener do RecyclerView
         recyclerView.addOnScrollListener(onScrollListener);
         recyclerView.setAdapter(adapter);
 
@@ -60,30 +50,23 @@ public class MainActivity extends AppCompatActivity implements EstabilishmentIte
         startSnapHelper.attachToRecyclerView( recyclerView );
 
 
-
-        ArrayList<CardapioItens> cardapio = CardapioList.getItens("Burger King");
-
         RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
-        LinearLayoutManager verticalLayout
-                = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+        verticalLayout = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
         cardapioRecycler.setLayoutManager(verticalLayout);
-        adapterCardapio = new CardapioAdapter(this, cardapio);
-        adapterCardapio.setClickListener(this);
-        cardapioRecycler.setAdapter(adapterCardapio);
+        setCardapio( 0 );
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        setCardapio( position );
+        Toast.makeText(this, ("Item clicado: " + adapterCardapio.getItem( position )), Toast.LENGTH_SHORT).show();
     }
 
     private void setCardapio(int position){
-        //Cria um novo array com os itens da posição clicada
-        ArrayList<CardapioItens> cardapio = CardapioList.getItens( adapter.getItem( position ) );
-
         //Adiciona novamente a recyclerView a lista atualizada
         RecyclerView cardapioRecycler = findViewById(R.id.cardapioList);
-        adapterCardapio = new CardapioAdapter(this, cardapio);
+        //Adiciona o adapter a nova lista de elementos criada
+        adapterCardapio = new CardapioAdapter(this, GetList.getItens( adapter.getItem( position ) ));
+        adapterCardapio.setClickListener(this);
         cardapioRecycler.setAdapter(adapterCardapio);
     }
 

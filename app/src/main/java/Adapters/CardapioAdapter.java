@@ -43,7 +43,6 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHo
         holder.nome.setText( cardapioItens.get( position ).getCardapioItemNome() );
         //Define preco
         holder.preco.setText( cardapioItens.get( position ).getCardapioItemPreco() );
-
     }
 
     // total number of rows
