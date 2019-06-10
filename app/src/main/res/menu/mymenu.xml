@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/menuLogout"
-        android:icon="@mipmap/ic_exit_to_app_black_24dp"
-        android:title="Logout" />
 
     <item
         android:id="@+id/action_add"
         app:showAsAction="ifRoom"
-        android:title="+"
+        android:title="@string/plusToolbar"
+        android:icon="@mipmap/add"
         android:textSize="20dp">
     </item>
+
     <item
         android:id="@+id/action_settings"
-        app:showAsAction="never"
-        android:title="Settings">
+        app:showAsAction="ifRoom"
+        android:title="@string/menuToolbar"
+        android:icon="@mipmap/hamburginho">
     </item>
+
+    <item
+        android:id="@+id/menuLogout"
+        android:icon="@mipmap/ic_exit_to_app_black_24dp"
+        android:title="@string/logoutToolbar"
+        app:showAsAction="ifRoom"/>
 </menu>

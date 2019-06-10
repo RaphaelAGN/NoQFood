@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -41,12 +42,16 @@ public class MainActivity extends AppCompatActivity implements CardapioAdapter.I
 
     private int pos = 0;
     private int maxPos;
+    private Toolbar mTopToolbar;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Actibity que será usada
         setContentView(R.layout.activity_estabilhments_itens);
+
+        mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(mTopToolbar);
 
         smoothScroller = new LinearSmoothScroller(this) {
             @Override protected int getVerticalSnapPreference() {

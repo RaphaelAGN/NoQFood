@@ -32,52 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BKCardapio"
-            android:label="@string/BKCardapio"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity"/>
-        </activity>
-        <activity android:name=".MCDonaldsCardapio"
-            android:label="@string/MCCardapio"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity"/>
-        </activity>
-        <activity android:name=".BobsCardapio"
-            android:label="@string/BobsCardapio"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity"/>
-        </activity>
-        <activity android:name=".SubwayCardapio"
-            android:label="@string/SubCardapio"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".TacobellCardapio"
-            android:label="@string/TacoCardapio"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity"/>
-        </activity>
     </application>
 
 </manifest>
