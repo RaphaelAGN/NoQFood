@@ -107,11 +107,6 @@ public class MainActivity extends AppCompatActivity implements CardapioAdapter.I
                     }
                 }
             }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-            }
         };
 
     }
