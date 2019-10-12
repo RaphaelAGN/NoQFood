@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (password.length() < 6) {
                                         inputPassword.setError("Senha muito curta, mínimo de 6 caracteres!");
                                     } else {
-                                        Toast.makeText(LoginActivity.this, "Email ou senha incorretos", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this, "Email e/ou senha incorretos", Toast.LENGTH_LONG).show();
                                     }
                                 } else {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
